@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Judson:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <h1 class="app-title">Weather App</h1>
+    <div class="search-area">
+      <input type="text" id="city-input" placeholder="Enter the city name..." autocomplete="off">
+      <button id="location-button">Get current location</button>
+    </div>
+
+    <button id="toggle-units" style="display: none;">°C / °F</button> 
+
+    <div class="weather-info-area" style="display: none;"> 
+      <div class="current-weather">
+        <h2 id="city-name">Current Weather Display</h2>
+        <div class="weather-info">
+          <img id="weather-icon" alt="Weather Icon">
+          <p id="temperature"></p>
+          <p id="description"></p>
+          <p>Humidity: <span id="humidity"></span>%</p>
+          <p>Wind: <span id="wind-speed"></span> km/h</p>
+        </div>
+      </div>
+
+      <div class="forecast-row" id="forecast-container"></div>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

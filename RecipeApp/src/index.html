@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Judson:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <img src="/RecipeApp/public/images/logo.jpg" alt="Logo" class="logo">
+    <div class="favorites-icon" onclick="toggleFavorites()">
+      <img src="/RecipeApp/public/images/icon.png" alt="Favorites">
+    </div>
+  </header>
+
+  <main>
+    <section class="search-section">
+      <input type="text" id="searchInput" placeholder="Enter the ingredients or the name of the dishes..." oninput="autoSuggest()" aria-label="Search for a recipe">
+    </section>
+
+    <section id="recipeGrid" class="grid-layout"></section>
+  </main>
+
+  <div id="recipeModal" class="modal">
+    <div class="modal-content">
+      <button class="close" onclick="closeModal()" aria-label="Close modal">&times;</button>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="Recipe Image" class="modal-image">
+        <div class="modal-info">
+          <h2 id="modalTitle" class="modal-title">Recipe Title Here</h2>
+          <p id="modalDescription" class="modal-description">Recipe description goes here. This is the overview of the recipe.</p>
+          <p id="modalIngredients" class="modal-meta">Ingredients: List of ingredients here</p>
+          <p id="modalInstructions" class="modal-meta">Instructions: Detailed instructions here</p>
+          <button id="addToFavoritesBtn" class="add-to-favorites-btn" onclick="addToFavorites()">Add to Favorites</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="favoritesModal" class="modal">
+    <div class="modal-content">
+      <button class="close" onclick="toggleFavorites()" aria-label="Close favorites modal">&times;</button>
+      <h2>Your Favorite Recipes</h2>
+      <div id="favoritesContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
